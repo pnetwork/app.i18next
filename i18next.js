@@ -672,7 +672,7 @@
       value: function translate(keys, options) {
         var _this2 = this;
 
-        if (_typeof(options) !== 'object' && this.options.overloadTranslationOptionHandler) {
+        if (this.options.overloadTranslationOptionHandler) {
           /* eslint prefer-rest-params: 0 */
           options = this.options.overloadTranslationOptionHandler(arguments);
         }

@@ -1,5 +1,5 @@
 {
-  "name": "i18next",
+  "name": "@pentium/app.i18next",
   "version": "17.0.8",
   "description": "i18next internationalization framework",
   "main": "./dist/cjs/i18next.js",
@@ -81,14 +81,6 @@
     "watchify": "3.9.0"
   },
   "scripts": {
-    "pretest": "npm run test:typescript && npm run test:typescript:noninterop",
-    "test": "npm run test:new && npm run test:compat",
-    "test:new": "karma start karma.conf.js --singleRun",
-    "test:compat": "karma start karma.backward.conf.js --singleRun",
-    "test:typescript": "tslint --project tsconfig.json",
-    "test:typescript:noninterop": "tslint --project tsconfig.nonEsModuleInterop.json",
-    "tdd": "karma start karma.conf.js",
-    "tdd:compat": "karma start karma.backward.conf.js",
     "build": "rimraf dist && rollup -c && cpy \"./dist/umd/*.js\" ./",
     "preversion": "npm run test && npm run build && git push",
     "postversion": "git push && git push --tags",
@@ -112,5 +104,8 @@
       "**/i18next.js",
       "**/i18next.min.js"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://package.pentium.network/repository/npm-hosted/"
   }
 }
