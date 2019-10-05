@@ -64,6 +64,8 @@ class Translator extends EventEmitter {
   }
 
   translate(keys, options) {
+    // Pentium
+    // Adjust this condition to support custom option
     if (this.options.overloadTranslationOptionHandler) {
       /* eslint prefer-rest-params: 0 */
       options = this.options.overloadTranslationOptionHandler(arguments);
